@@ -1,0 +1,7 @@
+.demo-video {
+  height: 500px;
+  width: 70%;
+  margin: 3em auto;
+  background-color: var(--accentColor);
+  border-radius: 0.5em;
+}
