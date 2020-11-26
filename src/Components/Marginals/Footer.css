@@ -1,0 +1,23 @@
+.footer {
+  overflow: hidden;
+  display: flex;
+}
+
+.footer-text {
+  position: relative;
+  bottom: -0.4em;
+  color: var(--accentColor);
+  font-size: 13em;
+  font-weight: 700;
+}
+
+.footer-contact {
+  margin: 2em auto;
+  direction: rtl;
+}
+
+.footer-contact-head {
+  color: var(--primaryColor);
+  font-size: 2em;
+  font-weight: 700;
+}

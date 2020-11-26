@@ -1,0 +1,39 @@
+.service-tier-parent {
+  margin: 3em 2em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.service-tier-child {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: var(--accentColor);
+  border-radius: 0.5em;
+}
+
+.service-tier-name {
+  text-align: left;
+  padding: 1em;
+  word-wrap: break-word;
+  font-weight: 700;
+  font-size: 2.25em;
+}
+
+.service-tier-child img {
+  position: absolute;
+  left: 200px;
+  top: 200px;
+  width: 90px;
+  height: 90px;
+}
+
+.service-tier-child:hover {
+  background-color: var(--primaryColor);
+  transition: all 0.2s ease-in;
+}
+
+.service-tier-child:hover img {
+  transition: all 0.5s ease-in;
+  top: 250px;
+}

@@ -1,21 +1,26 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import './App.css';
+
 import Home from './core/Home';
 import Activate from './Auth/Activate';
 import Login from './Auth/Login';
 import Register from './Auth/Register';
 import ForgetPassword from './Auth/ForgetPassword';
 import ResetPassword from './Auth/ResetPassword';
-import Admin from './Auth/Admin'
-import Private from './Auth/Private'
-import Adminsection from './helpers/AdminRoute'
-import Privatesection from './helpers/PrivateRoute'
+import Admin from './Auth/Admin';
+import Private from './Auth/Private';
+import Adminsection from './helpers/AdminRoute';
+import Privatesection from './helpers/PrivateRoute';
+import Navbar from './Components/Marginals/Navbar';
+import Footer from './Components/Marginals/Footer';
 
 const App = () => {
 
   return (
     <div>
       <BrowserRouter>
+        <Navbar />
         <Switch>
           <Route path='/' exact render={props => <Home {...props} />} />
           <Route path='/register' exact render={props => <Register {...props} />} />
@@ -26,6 +31,7 @@ const App = () => {
           <Privatesection path='/private' exact component={Private} />
           <Adminsection path='/admin' exact component={Admin} />
         </Switch>
+        <Footer />
       </BrowserRouter>
     </div>
   );

@@ -1,0 +1,20 @@
+.hero {
+  display: flex;
+  align-items: center;
+  height: 90vh;
+  font-weight: 700;
+}
+
+.hero-text {
+  width: 60%;
+  font-size: 5em;
+  margin: 0 2em;
+}
+
+.hero-text-highlight {
+  color: var(--primaryColor)
+}
+
+.hero-img {
+  width: 40%;
+}
