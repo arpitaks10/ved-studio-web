@@ -1,0 +1,15 @@
+.demo-video {
+  height: 60vh;
+  width: 70%;
+  margin: 3em auto;
+  background-color: var(--accentColor);
+  border-radius: 0.5em;
+}
+
+@media only screen and (max-width: 600px) {
+  .demo-video {
+    height: 30vh;
+    width: 90%;
+  }
+}
+

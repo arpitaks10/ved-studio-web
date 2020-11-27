@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
-import authSvg from '../assests/login.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import { authenticate, isAuth } from '../helpers/auth';
 import { Link, Redirect } from 'react-router-dom';
-import '../Components/Form.css';
+import '../Style/Form.css';
 
 const Login = ({ history }) => {
   const [formData, setFormData] = useState({
     email: '',
     password1: '',
-    textChange: 'Sign In'
+    textChange: 'Login'
   });
-  const { email, password1 } = formData;
+  const { email, password1, textChange } = formData;
   const handleChange = text => e => {
     setFormData({ ...formData, [text]: e.target.value });
   };
@@ -21,7 +20,7 @@ const Login = ({ history }) => {
     console.log(process.env.REACT_APP_API_URL);
     e.preventDefault();
     if (email && password1) {
-      setFormData({ ...formData, textChange: 'Submitting' });
+      setFormData({ ...formData, textChange: 'Setting up things !' });
       axios
         .post(`${process.env.REACT_APP_API_URL}/login`, {
           email,
@@ -33,7 +32,7 @@ const Login = ({ history }) => {
               ...formData,
               email: '',
               password1: '',
-              textChange: 'Submitted'
+              textChange: 'Good to go'
             });
             isAuth() && isAuth().role === 'admin'
               ? history.push('/admin')
@@ -46,10 +45,10 @@ const Login = ({ history }) => {
             ...formData,
             email: '',
             password1: '',
-            textChange: 'Sign In'
+            textChange: 'Login'
           });
           console.log(err.response);
-          toast.error(err.response.data.errors);
+          toast.error(err.response.data.message);
         });
     } else {
       toast.error('Please fill all fields');
@@ -58,7 +57,7 @@ const Login = ({ history }) => {
 
   return (
     <div className = "form">
-      {isAuth() ? <Redirect to='/' /> : null}
+      {isAuth() ? <Redirect to='/private' /> : null}
       <ToastContainer />
       <div className = "form-main">
         <div className = "form-img">
@@ -81,7 +80,7 @@ const Login = ({ history }) => {
               onChange = {handleChange('password1')}
               value = {password1}
             />
-            <button className = "form-button">Login</button>
+            <button type = "submit" className = "form-button">{textChange}</button>
             <Link
               to="/users/password/forget"
               className = "util-link"

@@ -1,6 +1,7 @@
 .service-tier-parent {
-  margin: 3em 2em;
+  margin: 3em auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
@@ -22,8 +23,8 @@
 
 .service-tier-child img {
   position: absolute;
-  left: 200px;
-  top: 200px;
+  left: 63%;
+  top: 63%;
   width: 90px;
   height: 90px;
 }
@@ -35,5 +36,22 @@
 
 .service-tier-child:hover img {
   transition: all 0.5s ease-in;
-  top: 250px;
+  top: 85%;
+}
+
+@media only screen and (max-width: 600px) {
+  .service-tier-child {
+    width: 90%;
+    height: 250px;
+    margin-bottom: 1em;
+  }
+
+  .service-tier-name {
+    font-size: 1.75em;
+  }
+
+  .service-tier-child img {
+    width: 70px;
+    height: 70px;
+  }
 }

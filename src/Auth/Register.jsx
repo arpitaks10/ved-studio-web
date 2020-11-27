@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import { isAuth } from '../helpers/auth';
 import { Redirect } from 'react-router-dom';
-import '../Components/Form.css';
+import '../Style/Form.css';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -96,7 +96,7 @@ const Register = () => {
               onChange={handleChange('password2')}
               value={password2}
             />
-            <button className = "form-button">Sign Up</button>
+            <button type = "submit" className = "form-button">{textChange}</button>
           </form>
           <div className = "util">
             or

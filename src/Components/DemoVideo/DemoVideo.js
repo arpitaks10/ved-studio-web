@@ -1,5 +1,5 @@
 import React from "react" ;
-import "./DemoVideo.css"
+import "../../Style/DemoVideo.css";
 
 const DemoVideo = () => {
   return (

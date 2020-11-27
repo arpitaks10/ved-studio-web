@@ -1,5 +1,5 @@
 import React from "react";
-import "./Hero.css";
+import "../../Style/Hero.css";
 import Illustration from "../../assests/sitting-6.svg";
 
 const Hero = () => {

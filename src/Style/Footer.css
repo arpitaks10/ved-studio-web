@@ -21,3 +21,18 @@
   font-size: 2em;
   font-weight: 700;
 }
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    flex-direction: column-reverse;
+  }
+
+  .footer-text {
+    font-size: 4em;
+  }
+
+  .footer-contact {
+    margin: auto;
+    text-align: center;
+  }
+}

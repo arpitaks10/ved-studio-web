@@ -1,0 +1,18 @@
+.activate-main,
+.activate-card {
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.activate-card {
+  padding: 2em;
+  background-color: var(--accentColor);
+  border-radius: 4px;
+}
+
+.activate-card h1 {
+  font-size: 2em;
+}

@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   align-items: center;
-  margin: 1em 8em;
+  margin: 1em 11%;
   font-size: 1.25em;
 }
 
@@ -21,7 +21,9 @@
   padding: 1em;
 }
 
-.navbar-link {
+.navbar-link,
+.navbar-link:visited,
+.navbar-link:active {
   color: var(--mainWhite);
   padding: 0 3em 0 0;
   width: 15vw;
@@ -30,8 +32,28 @@
 }
 
 .navbar-link:hover,
-.navbar-boldlink:hover {
+.navbar-boldlink:hover,
+.navbar-boldlink:visited,
+.navbar-boldlink:active  {
   transition: all 0.2s ease;
   color: var(--primaryColor);
   text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.75em;
+  }
+  .navbar-icon,
+  .navbar-links {
+    width: 100%;
+    text-align: center;
+
+  }
+
+  .navbar-boldlink:first-child {
+    font-size: 3em;
+  }
 }
