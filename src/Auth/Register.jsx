@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import authSvg from '../assests/auth.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
+import '../Style/Form.css';
 import { isAuth, authenticate } from '../helpers/auth';
 import { Redirect, Link } from 'react-router-dom';
-import '../Components/Form.css';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import { GoogleLogin } from 'react-google-login';
 

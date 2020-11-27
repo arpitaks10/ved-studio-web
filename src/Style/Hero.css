@@ -1,0 +1,39 @@
+.hero {
+  display: flex;
+  align-items: center;
+  height: auto;
+  font-weight: 700;
+  width: 100%;
+  margin: 5em auto;
+}
+
+.hero-text {
+  width: 60%;
+  font-size: 5rem;
+  margin: 0 2em;
+}
+
+.hero-text-highlight {
+  color: var(--primaryColor)
+}
+
+.hero-img {
+  width: 40%;
+}
+
+.hero-img img {
+  width: 80%;
+  height: 80%;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero {
+    margin: 5em auto;
+  }
+
+  .hero-text {
+    font-size: 1.25em;
+  }
+}
+
+

@@ -1,6 +1,6 @@
 import React from "react";
 import Icon from "../../assests/adService.svg";
-import "./ServiceTier.css"
+import "../../Style/ServiceTier.css"
 
 const ServiceTier = () => {
   const services = [

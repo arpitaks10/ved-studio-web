@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../Components/Hero/Hero';
 import DemoVideo from '../Components/DemoVideo/DemoVideo';
 import ServiceTier from '../Components/ServiceTier/ServiceTier';
-import './Home.css';
+import '../Style/Home.css';
 
 const Home = () => {
   const homeSections = [

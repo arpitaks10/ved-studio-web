@@ -8,6 +8,7 @@
   width: 70vw;
   height: 70vh;
   background-color: var(--accentColor);
+  border-radius: 4px;
 }
 
 .form-img,
@@ -20,11 +21,11 @@
   justify-content: center;
 }
 
-.form-form {
+.form-fields {
   background-color: var(--contrastColor);
 }
 
-.form-form h1 {
+.form-fields h1 {
   font-weight: 700;
 }
 
@@ -48,6 +49,7 @@
 
 .form-button {
   margin: 1em 0;
+  padding: 0.5em;
   color: var(--mainWhite);
   width: 100%;
   font-family: inherit;
@@ -56,6 +58,13 @@
   border: none;
   outline: none;
   background-color: var(--primaryColor);
+  border-radius: 2px;
+}
+
+.form-button:hover {
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) all;
+  background-color: var(--accentColor);
+  color: var(--primaryColor);
 }
 
 .util-link,
@@ -73,4 +82,22 @@
   background-color: var(--accentColor);
   color: var(--mainWhite);
   transition: 0.2s all ease-out;
+}
+
+@media only screen and (max-width: 600px) {
+  .form {
+    margin: 3em auto;
+  }
+
+  .form-main {
+    flex-direction: column-reverse;
+    width: 100vw;
+    height: auto;
+  }
+
+  .form-img,
+  .form-fields {
+    width: auto;
+    padding: 1em 2em;
+  } 
 }
