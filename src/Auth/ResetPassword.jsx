@@ -3,6 +3,7 @@ import authSvg from '../assests/reset.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import '../Style/Form.css';
+import IsLoading from "../Components/Loader/Loading";
 
 const ResetPassword = ({ match }) => {
   const [formData, setFormData] = useState({
@@ -87,4 +88,4 @@ const ResetPassword = ({ match }) => {
   );
 };
 
-export default ResetPassword;
+export default IsLoading(ResetPassword);

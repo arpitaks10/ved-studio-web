@@ -5,8 +5,9 @@ import axios from 'axios';
 import { updateUser, isAuth, getCookie, signout } from '../helpers/auth';
 import '../Style/Form.css';
 import '../Style/Dashboard.css';
+import IsLoading from "../Components/Loader/Loading";
 
-const Private = ({ history }) => {
+export const Private = ({ history }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -129,4 +130,4 @@ const Private = ({ history }) => {
   );
 };
 
-export default Private;
+export default IsLoading(Private);
