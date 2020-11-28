@@ -6,9 +6,9 @@ import { Link, Redirect } from 'react-router-dom';
 import '../Style/Form.css';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import { GoogleLogin } from 'react-google-login';
+import IsLoading from "../Components/Loader/Loading";
 
-
-const Login = ({ history }) => {
+export const Login = ({ history }) => {
   const [formData, setFormData] = useState({
     email: '',
     password1: '',
@@ -109,7 +109,7 @@ const Login = ({ history }) => {
 
   return (
 
-    <div className = "form">
+    <div className="form">
       {isAuth() ? <Redirect to='/private' /> : null}
       <ToastContainer />
       <div className="form-main">
@@ -133,47 +133,44 @@ const Login = ({ history }) => {
               onChange={handleChange('password1')}
               value={password1}
             />
-            <FacebookLogin
-              appId={`${process.env.REACT_APP_FACEBOOK_CLIENT}`}
-              autoLoad={false}
-              callback={responseFacebook}
-              render={renderProps => (
-                <Link
-                  onClick={renderProps.onClick}
-                  className='bg-primary m-1 text-light btn'
-                >
-
-                  <span>
-                    <i className='fa fa-lg m-0 fa-facebook' /> Sign In with Facebook</span>
-                </Link>
-              )}
-            ></FacebookLogin>
-            <GoogleLogin
-              clientId={`${process.env.REACT_APP_GOOGLE_CLIENT}`}
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
-              cookiePolicy={'single_host_origin'}
-              render={renderProps => (
-                <Link
-                  onClick={renderProps.onClick}
-                  disabled={renderProps.disabled}
-                  className='text-light btn m-1' style={{ 'background-color': 'rgb(219,68,55)' }}
-                >
-
-                  <span>
-                    <i className='fa fa-lg fa-google' /> Sign In with Google</span>
-
-                </Link>
-              )}
-            ></GoogleLogin>
             <button className="form-button">Login</button>
             <Link
               to="/users/password/forget"
               className="util-link"
             >
               Forget password?
-            </Link>
+            </Link> OR
           </form>
+          <div className="external-login">
+              <FacebookLogin
+                appId={`${process.env.REACT_APP_FACEBOOK_CLIENT}`}
+                autoLoad={false}
+                callback={responseFacebook}
+                render={renderProps => (
+                  <Link
+                    onClick={renderProps.onClick}
+                    className="fb-login-link"
+                  >
+                    Sign in with Facebook
+                  </Link>
+                )}
+              ></FacebookLogin>
+              <GoogleLogin
+                clientId={`${process.env.REACT_APP_GOOGLE_CLIENT}`}
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'}
+                render={renderProps => (
+                  <Link
+                    onClick={renderProps.onClick}
+                    disabled={renderProps.disabled}
+                    className="fb-login-link"
+                  >
+                    Sign in with Google
+                  </Link>
+                )}
+              ></GoogleLogin>
+            </div>
           <div className="util">
             New Here?
             <a
@@ -188,4 +185,4 @@ const Login = ({ history }) => {
   );
 };
 
-export default Login;
+export default IsLoading(Login);

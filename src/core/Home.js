@@ -3,6 +3,7 @@ import Hero from '../Components/Hero/Hero';
 import DemoVideo from '../Components/DemoVideo/DemoVideo';
 import ServiceTier from '../Components/ServiceTier/ServiceTier';
 import '../Style/Home.css';
+import IsLoading from "../Components/Loader/Loading";
 
 const Home = () => {
   const homeSections = [
@@ -36,4 +37,4 @@ const Home = () => {
   )
 };
 
-export default Home;
+export default IsLoading(Home);

@@ -3,6 +3,7 @@ import authSvg from '../assests/forget.svg';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import '../Style/Form.css';
+import IsLoading from "../Components/Loader/Loading";
 
 const ForgetPassword = ({history}) => {
   const [formData, setFormData] = useState({
@@ -69,5 +70,5 @@ const ForgetPassword = ({history}) => {
   );
 };
 
-export default ForgetPassword;
+export default IsLoading(ForgetPassword);
  

@@ -7,8 +7,9 @@ import { isAuth, authenticate } from '../helpers/auth';
 import { Redirect, Link } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import { GoogleLogin } from 'react-google-login';
+import IsLoading from "../Components/Loader/Loading";
 
-const Register = ({ history }) => {
+export const Register = ({ history }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -147,43 +148,38 @@ const Register = ({ history }) => {
               onChange={handleChange('password2')}
               value={password2}
             />
-
-            <FacebookLogin
-              appId={`${process.env.REACT_APP_FACEBOOK_CLIENT}`}
-              autoLoad={false}
-              callback={responseFacebook}
-              render={renderProps => (
-                <Link
-                  onClick={renderProps.onClick}
-                  className='bg-primary m-1 text-light btn'
-                >
-
-                  <span>
-                    <i className='fa fa-lg m-0 fa-facebook' /> Sign In with Facebook</span>
-                </Link>
-              )}
-            ></FacebookLogin>
-            <GoogleLogin
-              clientId={`${process.env.REACT_APP_GOOGLE_CLIENT}`}
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
-              cookiePolicy={'single_host_origin'}
-              render={renderProps => (
-                <Link
-                  onClick={renderProps.onClick}
-                  disabled={renderProps.disabled}
-                  className='text-light btn m-1' style={{ 'background-color': 'rgb(219,68,55)' }}
-                >
-
-                  <span>
-                    <i className='fa fa-lg fa-google' /> Sign In with Google</span>
-
-                </Link>
-              )}
-            ></GoogleLogin>
-
             <button className="form-button">Sign Up</button>
           </form>
+          <div className="external-login">
+              <FacebookLogin
+                appId={`${process.env.REACT_APP_FACEBOOK_CLIENT}`}
+                autoLoad={false}
+                callback={responseFacebook}
+                render={renderProps => (
+                  <Link
+                    onClick={renderProps.onClick}
+                    className="fb-login-link"
+                  >
+                    Sign Up with Facebook
+                  </Link>
+                )}
+              ></FacebookLogin>
+              <GoogleLogin
+                clientId={`${process.env.REACT_APP_GOOGLE_CLIENT}`}
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'}
+                render={renderProps => (
+                  <Link
+                    onClick={renderProps.onClick}
+                    disabled={renderProps.disabled}
+                    className="fb-login-link"
+                  >
+                    Sign Up with Google
+                  </Link>
+                )}
+              ></GoogleLogin>
+            </div>
           <div className="util">
             or
             <a
@@ -198,4 +194,4 @@ const Register = ({ history }) => {
   );
 };
 
-export default Register;
+export default IsLoading(Register);

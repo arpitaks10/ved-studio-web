@@ -75,13 +75,42 @@
 }
 
 .util {
-  margin: 1.75em auto 0.5em auto;
+  margin: 1.5em auto auto auto;
 }
 
 .util .util-link:hover {
   background-color: var(--accentColor);
   color: var(--mainWhite);
   transition: 0.2s all ease-out;
+}
+
+.external-login {
+  display: flex;
+
+  justify-content: space-around;
+}
+
+.fb-login-link,
+.fb-login-link:visited,
+.fb-login-link:active {
+  margin: 1em auto;
+  padding: 0.5em 0.75em;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--mainWhite);
+  background-color: var(--accentColor);
+  border-radius: 2px;
+  text-align: center;
+}
+
+.fb-login-link:first-child:hover {
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) all;
+  background-color: #3b5998;
+}
+
+.fb-login-link:last-child:hover {
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) all;
+  background-color: #EA4335;
 }
 
 @media only screen and (max-width: 600px) {
