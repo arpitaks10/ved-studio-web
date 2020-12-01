@@ -39,7 +39,7 @@
   top: 85%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
   .service-tier-child {
     width: 90%;
     height: 250px;
