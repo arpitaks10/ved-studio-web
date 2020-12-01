@@ -14,6 +14,7 @@ import Adminsection from './helpers/AdminRoute';
 import Privatesection from './helpers/PrivateRoute';
 import Navbar from './Components/Marginals/Navbar';
 import Footer from './Components/Marginals/Footer';
+import FAQ from './Components/FAQ/FAQ';
 
 const App = () => {
 
@@ -28,6 +29,7 @@ const App = () => {
           <Route path='/users/activate/:token' exact render={props => <Activate {...props} />} />
           <Route path='/users/password/forget' exact render={props => <ForgetPassword {...props} />} />
           <Route path='/users/password/reset/:token' exact render={props => <ResetPassword {...props} />} />
+          <Route path='/faq' exact component={FAQ} />
           <Privatesection path='/private' exact component={Private} />
           <Adminsection path='/admin' exact component={Admin} />
         </Switch>
