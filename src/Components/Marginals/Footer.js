@@ -1,12 +1,12 @@
 import React from "react";
-import "../../Style/Footer.css"
+import { Link } from 'react-router-dom';
+import "../../Style/Footer.css";
 
 const Footer = () => {
   const contactInfo = [
     "email",
     "phone number",
-    "address",
-    "other" 
+    "address"
   ]
   return (
     <div className = "footer">
@@ -19,6 +19,7 @@ const Footer = () => {
             return <p>{item}</p>
             })
           }
+          <Link to='/faq' style={{ color:'var(--mainWhite)', textDecoration:'none' }}>FAQ</Link>
         </div>
       </div>
     </div>
