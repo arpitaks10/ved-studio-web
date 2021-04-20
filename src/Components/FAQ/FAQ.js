@@ -59,32 +59,32 @@ const FAQ = () => {
     {
       "id" : 0,
       "question" : "Whats my name ?",
-      "answer" : "My name is sheela."
+      "answer" : "My name is Dora."
     },
     {
       "id" : 1,
       "question" : "Whats my name ?",
-      "answer" : "My name is sheela."
+      "answer" : "My name is Dora."
     },
     {
       "id" : 2,
       "question" : "Whats my name ?",
-      "answer" : "My name is sheela."
+      "answer" : "My name is Dora."
     },
     {
       "id" : 3,
       "question" : "Whats my name ?",
-      "answer" : "My name is sheela."
+      "answer" : "My name is Dora."
     },
     {
       "id" : 4,
       "question" : "Whats my name ?",
-      "answer" : "My name is sheela."
+      "answer" : "My name is Dora."
     },
     {
       "id" : 5,
       "question" : "Whats my name ?",
-      "answer" : "My name is sheela."
+      "answer" : "My name is Dora."
     }
   ];
 
